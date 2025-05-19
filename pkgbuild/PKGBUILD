@@ -1,9 +1,8 @@
 # Maintainer: Tales A. Mendonça <talesam@gmail.com>
 
-pkgname=pkgbuild-template
-pkgdesc="Package template for Communitybig"
-# Uncomment and edit the following lines as needed
-#depends=('')
+pkgname=auto-tweaks-browser
+pkgdesc="Auto optimize brave, chromium, epiphany, falkon, firefox, google-chrome, opera and vivaldi"
+depends=('libeatmydata' 'libva-utils' 'mesa-utils' 'irqbalance')
 #makedepends=('')
 #optdepends=('')
 #conflicts=('')
