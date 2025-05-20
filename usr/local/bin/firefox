@@ -8,7 +8,8 @@
 #  Created: 2020/01/11
 #  Altered: 2024/06/07
 #
-#  Copyright (c) 2022-2023, Bruno Gonçalves <www.biglinux.com.br>
+#  Copyright (c) 2023-2024, Vilmar Catafesta <vcatafesta@gmail.com>
+#                2022-2023, Bruno Gonçalves <www.biglinux.com.br>
 #  All rights reserved.
 #
 #  Redistribution and use in source and binary forms, with or without
@@ -83,13 +84,6 @@ else
     fi
 fi
 
-# Less disk write cache
-if [ -n "$LD_PRELOAD" ]; then
-	export LD_PRELOAD="/usr/lib/libeatmydata.so $LD_PRELOAD"
-else
-	export LD_PRELOAD="/usr/lib/libeatmydata.so"
-fi
-
 # Run Firefox
-exec /usr/bin/firefox "$@"
+LD_PRELOAD=/usr/lib/nosync-browser.so exec /usr/bin/firefox "$@"
 

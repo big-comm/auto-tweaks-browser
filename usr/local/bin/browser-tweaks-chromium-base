@@ -8,7 +8,8 @@
 #  Created: 2020/01/11
 #  Altered: 2024/06/14
 #
-#  Copyright (c) 2022-2023, Bruno Gonçalves <www.biglinux.com.br>
+#  Copyright (c) 2023-2024, Vilmar Catafesta <vcatafesta@gmail.com>
+#                2022-2023, Bruno Gonçalves <www.biglinux.com.br>
 #  All rights reserved.
 #
 #  Redistribution and use in source and binary forms, with or without
@@ -79,12 +80,8 @@ if glxinfo | grep -i -q -e "vmware" -e "llvmpipe"; then
 	PARAMETERS="--disable-gpu"
 fi
 
-# Less disk write cache
-if [ -n "$LD_PRELOAD" ]; then
-	export LD_PRELOAD="/usr/lib/libeatmydata.so $LD_PRELOAD"
-else
-	export LD_PRELOAD="/usr/lib/libeatmydata.so"
-fi
+export LIBVA_DRI3_DISABLE=$LIBVA_DRI3_DISABLE
+export LD_PRELOAD=/usr/lib/nosync-browser.so
 
 # Read filename and change /usr/local/bin to /usr/bin
-exec ${0//usr\/local\/bin/usr\/bin} $enableWayland $CLASS --enable-quic --enable-features=TearOffWebAppTabOpensWebAppWindow,PdfOcr,PdfSearchify,PdfTags,AccessiblePDFForm,PdfXfaForms,FluentScrollbar,GlobalMediaControlsUpdatedUI,ParallelDownloading --disable-features=WebRtcAllowInputVolumeAdjustment,AllowQt,GlobalShortcutsPortal   $PARAMETERS ${1+"$@"}
+exec ${0//usr\/local\/bin/usr\/bin} $enableWayland $CLASS $PARAMETERS ${1+"$@"}
