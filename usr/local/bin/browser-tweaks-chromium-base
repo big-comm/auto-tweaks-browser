@@ -35,9 +35,9 @@
 # Normal config in mesa and with h264ify with amber mesa
 if [ ! -e "$HOME/.config/BraveSoftware" ]; then
 	if [ -e "/usr/lib/libEGL_amber.so" ]; then
-		cp -R /usr/share/biglinux/browser/BraveSoftwareAmber "$HOME/.config/BraveSoftware"
+		cp -R /usr/share/community/browser/BraveSoftwareAmber "$HOME/.config/BraveSoftware"
 	else
-		cp -R /usr/share/biglinux/browser/BraveSoftware "$HOME/.config/BraveSoftware"
+		cp -R /usr/share/community/browser/BraveSoftware "$HOME/.config/BraveSoftware"
 	fi
 fi
 
