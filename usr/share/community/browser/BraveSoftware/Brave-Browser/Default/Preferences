@@ -46,5 +46,16 @@
         }
       }
     }
+  },
+  "brave_main": {
+    "first_run_tabs": []
+  },
+  "distribution": {
+    "import_bookmarks": false,
+    "import_history": false,
+    "make_chrome_default": false,
+    "make_chrome_default_for_user": false,
+    "suppress_first_run_default_browser_prompt": true,
+    "skip_first_run_ui": true
   }
 }
