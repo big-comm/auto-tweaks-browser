@@ -21,6 +21,9 @@
       "use_system": true
     }
   },
+  "session": {
+    "restore_on_startup": 1
+  },
   "gcm": {
     "product_category_for_subtypes": "com.brave.linux"
   },
